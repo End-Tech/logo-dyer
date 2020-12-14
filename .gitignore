@@ -1,0 +1,7 @@
+# IDEs
+.idea/
+.vscode/
+logo-dyer.iml
+
+# macOS
+.DS_Store
