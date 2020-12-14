@@ -18,7 +18,7 @@ main {
 	flex-direction: column;
 	align-items: center;
 
-	background-image: url("assets/bg-top.svg");
+	background-image: url("../assets/bg-top.svg");
 	background-position: left top;
 	background-repeat: no-repeat;
 }
@@ -66,7 +66,7 @@ footer {
 	display: flex;
 	justify-content: center;
 
-	background-image: url("assets/bg-bottom.svg");
+	background-image: url("../assets/bg-bottom.svg");
 	background-position: right bottom;
 	background-repeat: no-repeat;
 }
