@@ -1,5 +1,9 @@
 "use strict";
 
+/*****************/
+/* COLOR PICKERS */
+/*****************/
+
 const lightPicker = document.getElementById("light-selector");
 const mediumPicker = document.getElementById("medium-selector");
 const darkPicker = document.getElementById("dark-selector");
@@ -34,3 +38,26 @@ addColorPicker(mediumPicker, "medium");
 addColorPicker(darkPicker, "dark");
 addColorPicker(facePicker, "face");
 addColorPicker(circlePicker, "circle");
+
+/**************/
+/* RANDOMIZER */
+/**************/
+
+const randomizerButton = document.getElementById("randomizer");
+
+function randomizeColors() {
+	let keys = Object.keys(classes);
+	keys.forEach(key => {
+		let class_ = classes[key];
+		let color = "#" + ((1<<24) * Math.random() | 0).toString(16);
+		if (key === "circle") {
+			class_.style.stroke = color;
+		} else {
+			class_.style.fill = color;
+		}
+	})
+}
+
+randomizerButton.addEventListener("click", () => {
+	randomizeColors();
+});

@@ -30,7 +30,7 @@ main h1 {
 	margin-top: 0;
 	font-family: "Bitter", Helvetica, sans-serif;
 	text-transform: uppercase;
-	color: #282828;
+	color: #2d2d2d;
 	font-size: 70px;
 	text-align: center;
 }
@@ -61,6 +61,23 @@ main h1 {
 	font-style: italic;
 	font-size: 20px;
 	color: #454545;
+}
+
+.randomizer-group {
+	padding: 0;
+}
+
+#randomizer {
+	visibility: hidden;
+}
+
+.randomizer-group h2 {
+	margin: 0;
+	cursor: pointer;
+}
+
+.randomizer-group h2:active {
+	transform: translateY(2px);
 }
 
 footer {
