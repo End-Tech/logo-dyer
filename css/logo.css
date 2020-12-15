@@ -1,3 +1,7 @@
+#logo {
+	margin-bottom: 50px;
+}
+
 .light {
 	fill: #A61F8A;
 }
@@ -12,4 +16,8 @@
 
 .face {
 	fill: #D9D4DC;
+}
+
+.circle {
+	stroke: #A79AB0;
 }
