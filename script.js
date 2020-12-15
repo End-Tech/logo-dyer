@@ -1,8 +1,8 @@
 "use strict";
 
-/*****************/
-/* COLOR PICKERS */
-/*****************/
+/*****************
+ * COLOR PICKERS *
+ *****************/
 
 const lightPicker = document.getElementById("light-selector");
 const mediumPicker = document.getElementById("medium-selector");
@@ -39,9 +39,9 @@ addColorPicker(darkPicker, "dark");
 addColorPicker(facePicker, "face");
 addColorPicker(circlePicker, "circle");
 
-/**************/
-/* RANDOMIZER */
-/**************/
+/**************
+ * RANDOMIZER *
+ **************/
 
 const randomizerButton = document.getElementById("randomizer");
 
@@ -61,3 +61,12 @@ function randomizeColors() {
 randomizerButton.addEventListener("click", () => {
 	randomizeColors();
 });
+
+/**************
+ * SVG to PNG *
+ **************/
+
+const logoSVG = document.getElementById("logo");
+const downloadButton = document.getElementById("download");
+
+downloadButton.addEventListener("click", () => saveSvgAsPng(logoSVG, "endtech-logo.png"));
