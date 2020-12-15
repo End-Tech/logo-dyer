@@ -80,15 +80,16 @@ main h1 {
 }
 
 .util label input {
-	visibility: hidden;
+	display: none;
 }
 
-.util h2 {
+.util img {
+	max-width: 30px;
 	margin: 0;
 	cursor: pointer;
 }
 
-.util h2:active {
+.util img:active {
 	transform: translateY(2px);
 }
 
