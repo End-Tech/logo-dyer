@@ -2,11 +2,19 @@
 	box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
 	height: 100%;
 	width: 100%;
 	padding: 0;
 	margin: 0;
+}
+
+html {
+	background-image: url("../assets/bg-top.svg"), url("../assets/bg-bottom.svg");
+	background-position: left top, right bottom;
+	background-repeat: no-repeat, no-repeat;
+	background-attachment: fixed;
 }
 
 main {
@@ -18,10 +26,6 @@ main {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-
-	background-image: url("../assets/bg-top.svg");
-	background-position: left top;
-	background-repeat: no-repeat;
 }
 
 main h1 {
@@ -75,8 +79,7 @@ main h1 {
 	padding: 0;
 }
 
-#randomizer,
-#download {
+.util label input {
 	visibility: hidden;
 }
 
@@ -94,8 +97,4 @@ footer {
 
 	display: flex;
 	justify-content: center;
-
-	background-image: url("../assets/bg-bottom.svg");
-	background-position: right bottom;
-	background-repeat: no-repeat;
 }

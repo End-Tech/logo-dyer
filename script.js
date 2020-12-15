@@ -19,6 +19,24 @@ const classes = {
 	circle: rules.find(rule => rule.selectorText === ".circle")
 }
 
+function rgb2hex(rgb){
+	rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+	return (rgb && rgb.length === 4) ? "#" +
+		("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+		("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+		("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+}
+
+function updateColorPickers() {
+	lightPicker .value = rgb2hex(classes.light .style.fill);
+	mediumPicker.value = rgb2hex(classes.medium.style.fill);
+	darkPicker  .value = rgb2hex(classes.dark  .style.fill);
+	facePicker  .value = rgb2hex(classes.face  .style.fill);
+	circlePicker.value = rgb2hex(classes.circle.style.stroke);
+
+	return classes.circle.style.stroke;
+}
+
 function changeClassColor(name, color) {
 	if (name === "circle") {
 		classes[name].style.stroke = color;
@@ -55,7 +73,9 @@ function randomizeColors() {
 		} else {
 			class_.style.fill = color;
 		}
-	})
+	});
+
+	updateColorPickers();
 }
 
 randomizerButton.addEventListener("click", () => {
@@ -70,3 +90,18 @@ const logoSVG = document.getElementById("logo");
 const downloadButton = document.getElementById("download");
 
 downloadButton.addEventListener("click", () => saveSvgAsPng(logoSVG, "endtech-logo.png"));
+
+/*********
+ * RESET *
+ *********/
+
+const resetButton = document.getElementById("reset");
+
+resetButton.addEventListener("click", () => {
+	classes.light .style.fill   = "#A61F8A";
+	classes.medium.style.fill   = "#7D1A88";
+	classes.dark  .style.fill   = "#511388";
+	classes.face  .style.fill   = "#D9D4DC";
+	classes.circle .style.stroke = "#A79AB0";
+	updateColorPickers();
+});
